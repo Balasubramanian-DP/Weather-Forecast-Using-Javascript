@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast App</title>
+  <script defer src="script.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-b from-blue-500 to-blue-900 min-h-screen text-white flex flex-col items-center">
+
+  <!-- Header -->
+  <header class="text-center my-8">
+    <h1 class="text-4xl font-bold">Weather Forecast Application</h1>
+    <p class="text-lg mt-2">Get real-time weather updates and a 5-day forecast!</p>
+  </header>
+
+  <!-- Search Section -->
+  <div class="w-full max-w-md mx-auto flex flex-col items-center gap-4">
+    <input type="text" id="cityInput" placeholder="Enter city name" class="w-full p-3 rounded-lg border-2 border-white bg-transparent text-white placeholder-gray-300 focus:outline-none">
+    <div class="flex gap-4">
+      <button onclick="searchWeather()" class="p-3 bg-yellow-500 hover:bg-yellow-600 text-black rounded-lg font-semibold">Search by City</button>
+      <button onclick="searchCurrentLocation()" class="p-3 bg-green-500 hover:bg-green-600 text-black rounded-lg font-semibold">Use Current Location</button>
+    </div>
+  </div>
+
+  <!-- Current Weather Display -->
+  <section id="weatherDisplay" class="w-full max-w-lg mx-auto mt-8 p-6 rounded-lg bg-white bg-opacity-10 shadow-lg hidden">
+    <div class="text-center">
+      <h2 id="cityName" class="text-2xl font-bold"></h2>
+      <p id="date" class="text-sm mb-4"></p>
+      <img id="weatherIcon" class="mx-auto" alt="Weather Icon">
+      <p id="weatherDescription" class="capitalize text-lg"></p>
+    </div>
+    <div class="flex justify-around mt-6">
+      <div>
+        <p class="text-sm font-medium">Temperature</p>
+        <p id="temperature" class="text-xl font-semibold"></p>
+      </div>
+      <div>
+        <p class="text-sm font-medium">Humidity</p>
+        <p id="humidity" class="text-xl font-semibold"></p>
+      </div>
+      <div>
+        <p class="text-sm font-medium">Wind Speed</p>
+        <p id="windSpeed" class="text-xl font-semibold"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5-Day Forecast Display -->
+  <section id="forecastDisplay" class="w-full max-w-4xl mx-auto mt-10 grid grid-cols-1 md:grid-cols-5 gap-4 hidden">
+    <!-- Individual forecast cards will be inserted dynamically here -->
+  </section>
+
+</body>
+</html>
